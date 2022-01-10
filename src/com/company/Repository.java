@@ -3,6 +3,7 @@ package com.company;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Repository {
     public List<Offerte> readFromFile(String filename, String character) throws IOException{
@@ -37,6 +38,12 @@ public class Repository {
             bufferedWriter.write(line);
             bufferedWriter.newLine();
         }
+        bufferedWriter.close();
+    }
+
+    public void writeToFileString(String fileName, String biggestIncome, String str) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+        bufferedWriter.write(str);
         bufferedWriter.close();
     }
 }
